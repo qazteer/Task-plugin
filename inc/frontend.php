@@ -1,13 +1,12 @@
 <?php
 	class WPTP_task_plugin {
 	
-		public $path; 				// path to plugin dir
+		public $path; 				
 		public $url;
 		public $folder;
 		public $slug;
-		public $ns_plugin_name; 	// friendly name of this plugin for re-use throughout
-		public $ns_plugin_slug; 	// slug name of this plugin for re-use throughout
-		public $ns_plugin_ref; 	// reference name of the plugin for re-use throughout
+		public $ns_plugin_name; 	
+		public $ns_plugin_ref; 	
 		public $version;
 
 		public function __construct(){		
@@ -16,11 +15,9 @@
 			$this->url = plugins_url($this->folder.'/');
 			$this->slug = $this->folder;
 			$this->ns_plugin_name = "WP Task Plugin";
-			$this->ns_plugin_slug = "wp-task-plugin";
 			$this->ns_plugin_ref = "wp_task_plugin";
 			$this->version = "1.0.0";
-			
-			add_action( 'plugins_loaded', array($this, 'setup_plugin') );		
+					
 			add_action( 'admin_menu', array($this,'register_settings_page'), 20 );
 			add_action( 'admin_enqueue_scripts', array($this, 'admin_assets') );
 		}
@@ -29,10 +26,6 @@
 			wp_register_style( $this->slug, $this->url."css/style.css", false, $this->version );
 			wp_enqueue_style( $this->slug );
 					
-		}
-	 
-		public function setup_plugin(){
-			load_plugin_textdomain( $this->ns_plugin_slug, false, $this->path."lang/" ); 
 		}
 		
 		public function register_settings_page(){
