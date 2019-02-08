@@ -58,7 +58,7 @@
 					<li><h3><?php _e( 'Register a "Task" post type', 'wptp' ) ?></h3></li>
 					<li><h3><?php _e( 'Register a corresponding category (Task types)', 'wptp' ) ?></h3></li>
 					<li><h3><?php _e( 'Register a meta box with following fields: start date, due date, priority (high, low, normal)', 'wptp' ) ?></h3></li>
-					<li><h3><?php _e( 'Submit the result to a public git repository', 'wptp' ) ?></h3></li>
+					<li><h3><?php _e( 'https://github.com/teer12/Task-plugin', 'wptp' ) ?></h3></li>
 				</ul>	
 			</div>
 			<?php
